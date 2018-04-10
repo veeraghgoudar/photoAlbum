@@ -18,6 +18,7 @@ var s3 = new AWS.S3({
   params: {Bucket: albumBucketName}
 });
 
+var appVersion='2';
 function getHtml(template){
   return template.join('\n');
 }
@@ -49,8 +50,8 @@ function listAlbums() {
         ]) :
         '<p>You do not have any albums. Please Create album.';
       var htmlTemplate = [
-        '<div class=titleCloudWalkers ><h1>Cloud Walkers </h1></div> <h2>Albums</h2>',
-        message,
+        '<div class=titleCloudWalkers ><h1>Cloud Walkers </h1></div> <h2>Albums</h2><h3>App Version:'+appVersion+'</h3>',
+		 message,
         '<table id="customers" class="rowWidth"><tr><th>Album Name</th><th>Delete Album</th></tr>',
           getHtml(albums),
         '</table>',
