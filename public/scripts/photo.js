@@ -18,7 +18,7 @@ var s3 = new AWS.S3({
   params: {Bucket: albumBucketName}
 });
 
-var appVersion='2';
+var appVersion='3';
 function getHtml(template){
   return template.join('\n');
 }
